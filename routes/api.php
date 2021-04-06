@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
+use App\News;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/getusers/', 'UserController@getUsers');
+Route::post('/addusers/', 'UserController@addUser');
+Route::patch('/apdateusers/', 'UserController@apdateUser');
+Route::get('/registuгser/', 'UserController@registrUser'); 
